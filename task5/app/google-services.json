@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "291463825258",
+    "project_id": "task5-19383",
+    "storage_bucket": "task5-19383.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:291463825258:android:eb47e44b7d9353d3354713",
+        "android_client_info": {
+          "package_name": "com.zininegor.task5"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "291463825258-pa2n6n6euds2t4c82kvhe5ji8knkh34i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC1wlBHdU6f_SPmG-JwncSx3yjvSIZk4JU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "291463825258-pa2n6n6euds2t4c82kvhe5ji8knkh34i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

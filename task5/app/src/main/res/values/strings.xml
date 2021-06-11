@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">task 5</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="email">Электронная почта</string>
+    <string name="password">Пароль</string>
+    <string name="registration">Регистарция</string>
+    <string name="create_acc">Создать аккаунт</string>
+    <string name="password1">password</string>
+</resources>

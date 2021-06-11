@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright 2018, The Android Open Source Project
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<!-- Note that the animations may show red in Android Studio;
+     however, they are present and working perfectly fine. -->
+
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.zininegor.task5.ui.main.MainFragment"
+        android:label="main_fragment"
+        tools:layout="@layout/main_fragment" >
+        <action
+            app:enterAnim="@anim/slide_in_right"
+            android:id="@+id/action_mainFragment_to_registrationFragment"
+            app:destination="@id/registrationFragment"/>
+        <action
+            app:enterAnim="@anim/slide_in_right"
+            app:popEnterAnim="@anim/slide_in_left"
+            android:id="@+id/action_mainFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registrationFragment"
+        android:name="com.zininegor.task5.registration.RegistrationFragment"
+        android:label="RegistrationFragment" >
+        <action
+
+            app:enterAnim="@anim/slide_in_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            android:id="@+id/action_registrationFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/menuFragment"
+        android:name="com.zininegor.task5.menu.MenuFragment"
+        android:label="MenuFragment" >
+        <action
+            app:enterAnim="@anim/slide_in_right"
+            android:id="@+id/action_menuFragment_to_mainFragment"
+            app:destination="@id/mainFragment"
+            app:popEnterAnim="@anim/slide_in_right"/>
+        <action
+            app:enterAnim="@anim/slide_in_right"
+            android:id="@+id/action_menuFragment_to_waitRoomFragment"
+            app:destination="@id/waitRoomFragment" />
+        <action
+            app:enterAnim="@anim/slide_in_right"
+            app:popEnterAnim="@anim/slide_in_left"
+            android:id="@+id/action_menuFragment_to_waitRoomClientFragment"
+            app:destination="@id/waitRoomClientFragment" />
+        <action
+            app:enterAnim="@anim/slide_in_right"
+            app:popEnterAnim="@anim/slide_in_left"
+            android:id="@+id/action_menuFragment_to_profileFragment2"
+            app:destination="@id/profileFragment2" />
+    </fragment>
+    <fragment
+        app:enterAnim="@anim/slide_in_right"
+        android:id="@+id/profileFragment2"
+        android:name="com.zininegor.task5.profile.ProfileFragment"
+        android:label="ProfileFragment" >
+        <action
+            app:enterAnim="@anim/slide_in_right"
+            app:popEnterAnim="@anim/slide_in_left"
+            android:id="@+id/action_profileFragment2_to_menuFragment"
+            app:destination="@id/menuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/waitRoomFragment"
+        android:name="com.zininegor.task5.waitroom.WaitRoomFragment"
+        android:label="WaitRoomFragment" >
+        <action
+            app:enterAnim="@anim/slide_in_right"
+            app:popEnterAnim="@anim/slide_in_left"
+            android:id="@+id/action_waitRoomFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+        <action
+            app:enterAnim="@anim/slide_in_right"
+            app:popEnterAnim="@anim/slide_in_left"
+            android:id="@+id/action_waitRoomFragment_to_gameHostFragment"
+            app:destination="@id/gameHostFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/waitRoomClientFragment"
+        android:name="com.zininegor.task5.waitroomclient.WaitRoomClientFragment"
+        android:label="WaitRoomClientFragment" >
+        <argument
+            android:name="roomId"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_waitRoomClientFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+        <action
+            android:id="@+id/action_waitRoomClientFragment_to_gameClientFragment"
+            app:destination="@id/gameClientFragment" />
+    </fragment>
+    <fragment
+
+        android:id="@+id/gameHostFragment"
+        android:name="com.zininegor.task5.game.GameHostFragment"
+        android:label="game_host_fragment"
+        tools:layout="@layout/game_host_fragment" >
+        <action
+            app:enterAnim="@anim/slide_in_right"
+            app:popEnterAnim="@anim/slide_in_left"
+            android:id="@+id/action_gameHostFragment_to_finishFragment"
+            app:destination="@id/finishFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameClientFragment"
+        android:name="com.zininegor.task5.gameclient.GameClientFragment"
+        android:label="game_client_fragment"
+        tools:layout="@layout/game_client_fragment" >
+        <argument
+            android:name="roomId"
+            app:argType="string" />
+        <action
+            app:enterAnim="@anim/slide_in_right"
+            app:popEnterAnim="@anim/slide_in_left"
+            android:id="@+id/action_gameClientFragment_to_finishFragment"
+            app:destination="@id/finishFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/finishFragment"
+        android:name="com.zininegor.task5.fininsh.FinishFragment"
+        android:label="finish_fragment"
+        tools:layout="@layout/finish_fragment" >
+        <argument
+            android:name="roomId"
+            app:argType="string" />
+        <argument
+            android:name="winner"
+            app:argType="boolean" />
+        <argument
+            android:name="host"
+            app:argType="boolean" />
+        <argument
+            android:name="draw"
+            app:argType="boolean" />
+        <argument
+            android:name="nick"
+            app:argType="string" />
+
+
+        <action
+            app:enterAnim="@anim/slide_in_right"
+            app:popEnterAnim="@anim/slide_in_left"
+            android:id="@+id/action_finishFragment_to_waitRoomClientFragment"
+            app:destination="@id/waitRoomClientFragment" />
+        <action
+            app:enterAnim="@anim/slide_in_right"
+            app:popEnterAnim="@anim/slide_in_left"
+            android:id="@+id/action_finishFragment_to_waitRoomFragment"
+            app:destination="@id/waitRoomFragment" />
+    </fragment>
+</navigation>

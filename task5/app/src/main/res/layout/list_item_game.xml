@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="sleep"
+            type="com.zininegor.task5.game.MyMap" />
+
+        <variable
+            name="clickListener"
+            type="com.zininegor.task5.game.TitleWorkoutListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/border"
+        android:onClick="@{() -> clickListener.onClick(sleep)}"
+        android:orientation="vertical"
+        android:textSize="16sp">
+
+        <TextView
+            android:id="@+id/quality_string"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/aeonik_regular"
+            android:gravity="center"
+            android:text="X"
+            android:textSize="60sp"
+            app:key="@{sleep}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
